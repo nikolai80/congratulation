@@ -1,0 +1,9 @@
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\bin\Debug\netcoreapp1.1\Сongratulation.deps.json
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\bin\Debug\netcoreapp1.1\Сongratulation.runtimeconfig.json
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\bin\Debug\netcoreapp1.1\Сongratulation.runtimeconfig.dev.json
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\bin\Debug\netcoreapp1.1\Сongratulation.dll
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\obj\Debug\netcoreapp1.1\Сongratulation.csprojResolveAssemblyReference.cache
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\obj\Debug\netcoreapp1.1\Сongratulation.AssemblyInfo.cs
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\bin\Debug\netcoreapp1.1\Сongratulation.pdb
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\obj\Debug\netcoreapp1.1\Сongratulation.dll
+D:\rybchenko\myProjects\congratulation\Сongratulation\Сongratulation\obj\Debug\netcoreapp1.1\Сongratulation.pdb
