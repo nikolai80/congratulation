@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Сongratulation.Models.СongratulateUser>
+﻿@model Сongratulation.Models.СongratulateUser
 @{
   ViewData["Title"] = "Home Page";
   Layout = null;
@@ -10,10 +10,8 @@
   <title></title>
 </head>
 <body>
- @foreach(var item in Model)
- {
-   <div>@item.Alias</div>
-
- }
+ 
+   <div>@Model.Alias - @Model.Name - @Model.Surname - @Model.BirthdayDate</div>
+ 
   </body>
 </html>

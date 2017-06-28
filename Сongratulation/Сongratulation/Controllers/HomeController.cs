@@ -17,9 +17,16 @@ namespace Сongratulation.Controllers
     }
 
 
-    public IActionResult Index()
+    public IActionResult Index(string alias="")
     {
-      return View(db.СongratulateUsers.ToList());
+
+      СongratulateUser res=new СongratulateUser();
+
+      if (!String.IsNullOrEmpty(alias))
+      {
+        res = db.СongratulateUsers.Where(u => u.Alias == alias).FirstOrDefault();
+      }
+      return View(res);
     }
 
   }
