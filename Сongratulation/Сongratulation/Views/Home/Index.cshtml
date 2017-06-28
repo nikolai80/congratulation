@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Models.CongratulateUser>
+﻿@model IEnumerable<Сongratulation.Models.СongratulateUser>
 @{
   ViewData["Title"] = "Home Page";
   Layout = null;
@@ -12,7 +12,7 @@
 <body>
  @foreach(var item in Model)
  {
-   <div>item.Alias</div>
+   <div>@item.Alias</div>
 
  }
   </body>
