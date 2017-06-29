@@ -8,10 +8,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title></title>
+  <link href="~/css/site.css" rel="stylesheet" />
+  <link href="~/css/formAddCongratulateUser.css" rel="stylesheet" />
 </head>
 <body>
- 
+   <button class="addCongratulateUser">Добавить поздравляемого</button>
    <div>@Model.Alias - @Model.Name - @Model.Surname - @Model.BirthdayDate</div>
- 
+  <div class="form-addCongratulateUser">
+    <div class="form-addCongratulateUser--alias"><input type="text" name="alias" value="" /></div>
+    <div class="form-addCongratulateUser--name"><input type="text" name="name" value="" /></div>
+    <div class="form-addCongratulateUser--surname"><input type="text" name="surname" value="" /></div>
+    <div class="form-addCongratulateUser--birthdayDate"><input type="text" name="birthdayDate" value="" /></div>
+  </div>
+  <script src="~/js/site.js"></script>
   </body>
 </html>

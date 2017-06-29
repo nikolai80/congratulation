@@ -17,16 +17,39 @@ namespace Сongratulation.Controllers
     }
 
 
-    public IActionResult Index(string alias="")
+    public IActionResult Index(string alias = "")
     {
 
-      СongratulateUser res=new СongratulateUser();
+      СongratulateUser res = new СongratulateUser();
 
       if (!String.IsNullOrEmpty(alias))
       {
         res = db.СongratulateUsers.Where(u => u.Alias == alias).FirstOrDefault();
       }
       return View(res);
+    }
+
+    public JsonResult CreateCongratulateUser(string alias, string name, string surname, string birthdayDate)
+    {
+      var res = false;
+
+      if (!String.IsNullOrEmpty(alias))
+      {
+        db.СongratulateUsers.Add(new СongratulateUser
+        {
+          Alias = alias,
+          Name = name,
+          Surname = surname,
+          BirthdayDate = DateTime.Parse(birthdayDate)
+        });
+        db.SaveChangesAsync();
+        res = true;
+      }
+
+      return Json(new
+      {
+        result = res,
+      });
     }
 
   }
