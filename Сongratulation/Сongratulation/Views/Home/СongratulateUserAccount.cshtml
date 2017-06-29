@@ -1,0 +1,20 @@
+﻿@model Сongratulation.Models.СongratulateUser
+@{
+  ViewData["Title"] = "Home Page";
+  Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+  <link href="~/css/site.css" rel="stylesheet" />
+  <link href="~/css/formAddCongratulateUser.css" rel="stylesheet" />
+</head>
+<body>
+      <div>@Model.Alias - @Model.Name - @Model.Surname - @Model.BirthdayDate</div> 
+  <script src="~/lib/jquery/dist/jquery.js"></script>
+  <script src="~/lib/vue/dist/vue.js"></script>
+  <script src="~/js/site.js"></script>
+</body>
+</html>

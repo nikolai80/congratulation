@@ -54,7 +54,7 @@ namespace Сongratulation
 
       app.UseMvc(routes =>
       {
-        routes.MapRoute("userProfile","{alias?}", new { controller = "Home", action = "Index"});
+        routes.MapRoute("userProfile","Home/{alias}", new { controller = "Home", action = "СongratulateUserAccount" });
 
         routes.MapRoute(
                   name: "default",

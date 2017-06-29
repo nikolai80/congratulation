@@ -17,7 +17,12 @@ namespace Сongratulation.Controllers
     }
 
 
-    public IActionResult Index(string alias = "")
+    public IActionResult Index()
+    {
+      return View(db.СongratulateUsers.ToList());
+    }
+
+    public IActionResult СongratulateUserAccount(string alias = "")
     {
 
       СongratulateUser res = new СongratulateUser();
@@ -29,6 +34,7 @@ namespace Сongratulation.Controllers
       return View(res);
     }
 
+    [HttpPost]
     public JsonResult CreateCongratulateUser(string alias, string name, string surname, string birthdayDate)
     {
       var res = false;

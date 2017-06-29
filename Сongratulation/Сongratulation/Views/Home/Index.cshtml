@@ -1,4 +1,4 @@
-﻿@model Сongratulation.Models.СongratulateUser
+﻿@model IEnumerable<Сongratulation.Models.СongratulateUser>
 @{
   ViewData["Title"] = "Home Page";
   Layout = null;
@@ -12,14 +12,18 @@
   <link href="~/css/formAddCongratulateUser.css" rel="stylesheet" />
 </head>
 <body>
-   <button class="addCongratulateUser">Добавить поздравляемого</button>
-   <div>@Model.Alias - @Model.Name - @Model.Surname - @Model.BirthdayDate</div>
+   <button class="addCongratulateUserBtn--showHideForm">Добавить поздравляемого</button>
+  @foreach(var user in @Model) {
+   <div>@user.Alias - @user.Name - @user.Surname - @user.BirthdayDate</div> }
   <div class="form-addCongratulateUser">
     <div class="form-addCongratulateUser--alias"><input type="text" name="alias" value="" /></div>
     <div class="form-addCongratulateUser--name"><input type="text" name="name" value="" /></div>
     <div class="form-addCongratulateUser--surname"><input type="text" name="surname" value="" /></div>
     <div class="form-addCongratulateUser--birthdayDate"><input type="text" name="birthdayDate" value="" /></div>
   </div>
+  <script src="~/lib/jquery/dist/jquery.js"></script>
+  <script src="~/lib/vue/dist/vue.js"></script>
   <script src="~/js/site.js"></script>
+  <script src="~/js/CongratulateUserAdd.js"></script>
   </body>
 </html>
