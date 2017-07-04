@@ -19,7 +19,20 @@ cu.addCongratulateUser = {
     birthdayDate = $("input[name='birthdayDate']", ".form-addCongratulateUser").val();
     console.log(name || "-", alias || "-", surname || "-", birthdayDate || "-");
 
-    if (alias!="" && name!="") {
+    if (alias != "" && name != "") {
+      $.ajax({
+        url: "home/CreateCongratulateUser"
+        ,type:"POST"
+        ,data: {
+          alias: alias
+          , name: name
+          , surname: surname
+          , birthdayDate: birthdayDate
+        }
+        , success: function (data) {
+          console.log(data);
+        } 
+      })
     }
   }
 }

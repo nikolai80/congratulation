@@ -54,6 +54,7 @@ namespace Сongratulation
 
       app.UseMvc(routes =>
       {
+        routes.MapRoute("CreateCongratulateUser", "Home/CreateCongratulateUser", new { controller = "Home", action = "CreateCongratulateUser" });
         routes.MapRoute("userProfile","Home/{alias}", new { controller = "Home", action = "СongratulateUserAccount" });
 
         routes.MapRoute(
