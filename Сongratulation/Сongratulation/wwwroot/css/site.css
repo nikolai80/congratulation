@@ -28,6 +28,40 @@ textarea {
     width: 100%;
 }
 
+.visible{display:block!important;}
+.m-t-1{
+  margin-top:1rem;
+}
+.m-t-2{
+  margin-top:1.5rem;
+}
+.m-t-3 {
+  margin-top: 2rem;
+}
+
+.m-b-1 {
+  margin-bottom: 1rem;
+}
+
+.m-b-2 {
+  margin-bottom: 1.5rem;
+}
+
+.m-b-3 {
+  margin-bottom: 2rem;
+}
+.m-a-1 {
+  margin: 1rem;
+}
+
+.m-a-2 {
+  margin: 1.5rem;
+}
+
+.m-a-3 {
+  margin: 2rem;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
