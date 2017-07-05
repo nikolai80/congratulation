@@ -12,6 +12,5 @@ namespace Сongratulation.Models
     public string Name { get; set; }
     public string Surname { get; set; }
     public DateTime BirthdayDate { get; set; }
-
   }
 }
