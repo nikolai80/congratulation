@@ -4,21 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Сongratulation.Models;
+using Сongratulation.DAL;
 
 namespace Сongratulation.Controllers
 {
   public class HomeController : Controller
   {
 
-    CongratulationContext db;
+    UnitOfWork unitOfWork;
     public HomeController(CongratulationContext context)
     {
-      db = context;
+      unitOfWork = new UnitOfWork(context);
     }
 
     public IActionResult Index()
     {
-      return View(db.СongratulateUsers.ToList());
+      return View(unitOfWork.СongratulateUsers.GetAll());
     }
 
     public IActionResult СongratulateUserAccount(string alias = "")
@@ -28,7 +29,7 @@ namespace Сongratulation.Controllers
 
       if (!String.IsNullOrEmpty(alias))
       {
-        res = db.СongratulateUsers.Where(u => u.Alias == alias).FirstOrDefault();
+        res = unitOfWork.СongratulateUsers.GetAll().Where(u => u.Alias == alias).FirstOrDefault();
       }
       return View(res);
     }
@@ -40,14 +41,14 @@ namespace Сongratulation.Controllers
 
       if (!String.IsNullOrEmpty(alias))
       {
-        db.СongratulateUsers.Add(new СongratulateUser
+        unitOfWork.СongratulateUsers.Create(new СongratulateUser
         {
           Alias = alias,
           Name = name,
           Surname = surname,
           BirthdayDate = DateTime.Parse(birthdayDate)
         });
-        db.SaveChangesAsync();
+        unitOfWork.Save();
         res = true;
       }
 

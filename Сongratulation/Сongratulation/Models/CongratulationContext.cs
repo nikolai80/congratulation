@@ -6,6 +6,7 @@ namespace Сongratulation.Models
     {
     public DbSet<СongratulateUser> СongratulateUsers { get; set; }
 
+    public CongratulationContext() { }
     public CongratulationContext(DbContextOptions<CongratulationContext> options) : base(options) { }
 
   }

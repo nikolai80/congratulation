@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Сongratulation.Models;
+using Сongratulation.DAL;
 
 namespace Сongratulation
 {
@@ -31,6 +32,7 @@ namespace Сongratulation
     {
       string connection = Configuration.GetConnectionString("DefaultConnection");
       services.AddDbContext<CongratulationContext>(options => options.UseSqlServer(connection));
+      services.AddSingleton<UnitOfWork>();
       services.AddMvc();
     }
 

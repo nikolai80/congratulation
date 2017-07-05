@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,27 +17,31 @@ namespace Сongratulation.DAL
     }
     public void Create(СongratulateUser item)
     {
-      throw new NotImplementedException();
+      db.СongratulateUsers.Add(item);
     }
 
     public void Delete(int id)
     {
-      throw new NotImplementedException();
+      СongratulateUser congratulateUser = db.СongratulateUsers.Find(id);
+      if (congratulateUser != null)
+      { db.СongratulateUsers.Remove(congratulateUser); }
     }
 
     public СongratulateUser Get(int id)
     {
-      throw new NotImplementedException();
+      var res = db.СongratulateUsers.Find(id);
+      return res;
     }
 
     public IEnumerable<СongratulateUser> GetAll()
     {
-      throw new NotImplementedException();
+      var res = db.СongratulateUsers;
+      return res;
     }
 
     public void Update(СongratulateUser item)
     {
-      throw new NotImplementedException();
+      db.Entry(item).State = EntityState.Modified;
     }
   }
 }
