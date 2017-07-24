@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="b005e7ccb7254e958c20c42878a6ff1b" Name="Diagram1" >
         <EntityTypeShape EntityType="congaratulationModel.uc_User" Width="1.5" PointX="2.75" PointY="1" />
+        <EntityTypeShape EntityType="congaratulationModel.uc_CongratulationCard" Width="1.5" PointX="6.25" PointY="1.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

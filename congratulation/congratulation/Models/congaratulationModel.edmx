@@ -14,6 +14,7 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="congaratulationModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="congaratulationModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="uc_UserSet" EntityType="congaratulationModel.uc_User" />
+          <EntitySet Name="uc_CongratulationCardSet" EntityType="congaratulationModel.uc_CongratulationCard" />
         </EntityContainer>
         <EntityType Name="uc_User">
           <Key>
@@ -22,8 +23,14 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Alias" Type="String" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="Surname" Type="String" Nullable="false" />
-          <Property Name="BirthdayDate" Type="String" Nullable="false" />
+          <Property Name="Surname" Type="String" Nullable="true" />
+          <Property Name="BirthdayDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uc_CongratulationCard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
