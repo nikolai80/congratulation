@@ -161,6 +161,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>congaratulationModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CongratulationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CongratulationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CongratulationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CongratulationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\uc_Congratulation.cs">
+      <DependentUpon>CongratulationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\uc_CongratulationCard.cs">
+      <DependentUpon>CongratulationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\uc_Gift.cs">
+      <DependentUpon>CongratulationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\uc_Photo.cs">
+      <DependentUpon>CongratulationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\uc_User.cs">
+      <DependentUpon>CongratulationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +216,16 @@
       <DependentUpon>congaratulationModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Models\CongratulationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CongratulationModel.Context.cs</LastGenOutput>
+      <DependentUpon>congaratulationModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\CongratulationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CongratulationModel.cs</LastGenOutput>
+      <DependentUpon>congaratulationModel.edmx</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />

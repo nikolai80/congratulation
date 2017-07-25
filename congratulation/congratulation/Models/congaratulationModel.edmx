@@ -15,6 +15,25 @@
         <EntityContainer Name="congaratulationModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="uc_UserSet" EntityType="congaratulationModel.uc_User" />
           <EntitySet Name="uc_CongratulationCardSet" EntityType="congaratulationModel.uc_CongratulationCard" />
+          <AssociationSet Name="uc_Useruc_CongratulationCard" Association="congaratulationModel.uc_Useruc_CongratulationCard">
+            <End Role="uc_User" EntitySet="uc_UserSet" />
+            <End Role="uc_CongratulationCard" EntitySet="uc_CongratulationCardSet" />
+          </AssociationSet>
+          <EntitySet Name="uc_CongratulationSet" EntityType="congaratulationModel.uc_Congratulation" />
+          <EntitySet Name="uc_GiftSet" EntityType="congaratulationModel.uc_Gift" />
+          <EntitySet Name="uc_PhotoSet" EntityType="congaratulationModel.uc_Photo" />
+          <AssociationSet Name="uc_CongratulationCarduc_Congratulation" Association="congaratulationModel.uc_CongratulationCarduc_Congratulation">
+            <End Role="uc_CongratulationCard" EntitySet="uc_CongratulationCardSet" />
+            <End Role="uc_Congratulation" EntitySet="uc_CongratulationSet" />
+          </AssociationSet>
+          <AssociationSet Name="uc_CongratulationCarduc_Gift" Association="congaratulationModel.uc_CongratulationCarduc_Gift">
+            <End Role="uc_CongratulationCard" EntitySet="uc_CongratulationCardSet" />
+            <End Role="uc_Gift" EntitySet="uc_GiftSet" />
+          </AssociationSet>
+          <AssociationSet Name="uc_CongratulationCarduc_Photo" Association="congaratulationModel.uc_CongratulationCarduc_Photo">
+            <End Role="uc_CongratulationCard" EntitySet="uc_CongratulationCardSet" />
+            <End Role="uc_Photo" EntitySet="uc_PhotoSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="uc_User">
           <Key>
@@ -25,13 +44,64 @@
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Surname" Type="String" Nullable="true" />
           <Property Name="BirthdayDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="uc_CongratulationCard" Relationship="congaratulationModel.uc_Useruc_CongratulationCard" FromRole="uc_User" ToRole="uc_CongratulationCard" />
         </EntityType>
         <EntityType Name="uc_CongratulationCard">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeaderText" Type="String" Nullable="false" />
+          <Property Name="HeaderBackgroundImage" Type="String" Nullable="false" />
+          <Property Name="Whom" Type="String" Nullable="false" />
+          <Property Name="HeaderImageUrl" Type="String" Nullable="false" />
+          <NavigationProperty Name="uc_User" Relationship="congaratulationModel.uc_Useruc_CongratulationCard" FromRole="uc_CongratulationCard" ToRole="uc_User" />
+          <NavigationProperty Name="uc_Congratulation" Relationship="congaratulationModel.uc_CongratulationCarduc_Congratulation" FromRole="uc_CongratulationCard" ToRole="uc_Congratulation" />
+          <NavigationProperty Name="uc_Gift" Relationship="congaratulationModel.uc_CongratulationCarduc_Gift" FromRole="uc_CongratulationCard" ToRole="uc_Gift" />
+          <NavigationProperty Name="uc_Photo" Relationship="congaratulationModel.uc_CongratulationCarduc_Photo" FromRole="uc_CongratulationCard" ToRole="uc_Photo" />
         </EntityType>
+        <Association Name="uc_Useruc_CongratulationCard">
+          <End Type="congaratulationModel.uc_User" Role="uc_User" Multiplicity="1" />
+          <End Type="congaratulationModel.uc_CongratulationCard" Role="uc_CongratulationCard" Multiplicity="*" />
+        </Association>
+        <EntityType Name="uc_Congratulation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CongratulationImageUrl" Type="String" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" />
+          <Property Name="Who" Type="String" Nullable="false" />
+          <NavigationProperty Name="uc_CongratulationCard" Relationship="congaratulationModel.uc_CongratulationCarduc_Congratulation" FromRole="uc_Congratulation" ToRole="uc_CongratulationCard" />
+        </EntityType>
+        <EntityType Name="uc_Gift">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GiftImage" Type="String" Nullable="false" />
+          <NavigationProperty Name="uc_CongratulationCard" Relationship="congaratulationModel.uc_CongratulationCarduc_Gift" FromRole="uc_Gift" ToRole="uc_CongratulationCard" />
+        </EntityType>
+        <EntityType Name="uc_Photo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhotoUrl" Type="String" Nullable="false" />
+          <NavigationProperty Name="uc_CongratulationCard" Relationship="congaratulationModel.uc_CongratulationCarduc_Photo" FromRole="uc_Photo" ToRole="uc_CongratulationCard" />
+        </EntityType>
+        <Association Name="uc_CongratulationCarduc_Congratulation">
+          <End Type="congaratulationModel.uc_CongratulationCard" Role="uc_CongratulationCard" Multiplicity="1" />
+          <End Type="congaratulationModel.uc_Congratulation" Role="uc_Congratulation" Multiplicity="*" />
+        </Association>
+        <Association Name="uc_CongratulationCarduc_Gift">
+          <End Type="congaratulationModel.uc_CongratulationCard" Role="uc_CongratulationCard" Multiplicity="*" />
+          <End Type="congaratulationModel.uc_Gift" Role="uc_Gift" Multiplicity="*" />
+        </Association>
+        <Association Name="uc_CongratulationCarduc_Photo">
+          <End Type="congaratulationModel.uc_CongratulationCard" Role="uc_CongratulationCard" Multiplicity="1" />
+          <End Type="congaratulationModel.uc_Photo" Role="uc_Photo" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

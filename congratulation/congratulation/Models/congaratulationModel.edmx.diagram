@@ -5,8 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b005e7ccb7254e958c20c42878a6ff1b" Name="Diagram1" >
-        <EntityTypeShape EntityType="congaratulationModel.uc_User" Width="1.5" PointX="2.75" PointY="1" />
-        <EntityTypeShape EntityType="congaratulationModel.uc_CongratulationCard" Width="1.5" PointX="6.25" PointY="1.5" />
+        <EntityTypeShape EntityType="congaratulationModel.uc_User" Width="1.5" PointX="1.5" PointY="0.75" />
+        <EntityTypeShape EntityType="congaratulationModel.uc_CongratulationCard" Width="2.125" PointX="4" PointY="1" />
+        <AssociationConnector Association="congaratulationModel.uc_Useruc_CongratulationCard" />
+        <EntityTypeShape EntityType="congaratulationModel.uc_Congratulation" Width="1.875" PointX="8" PointY="0.5" />
+        <EntityTypeShape EntityType="congaratulationModel.uc_Gift" Width="1.5" PointX="8.25" PointY="3" />
+        <EntityTypeShape EntityType="congaratulationModel.uc_Photo" Width="1.5" PointX="8.25" PointY="5" />
+        <AssociationConnector Association="congaratulationModel.uc_CongratulationCarduc_Congratulation" />
+        <AssociationConnector Association="congaratulationModel.uc_CongratulationCarduc_Gift" />
+        <AssociationConnector Association="congaratulationModel.uc_CongratulationCarduc_Photo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
