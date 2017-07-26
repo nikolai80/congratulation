@@ -153,8 +153,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CongratulationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Dal\CongratulationCardRepository.cs" />
+    <Compile Include="Dal\CongratulationRepository.cs" />
+    <Compile Include="Dal\GiftRepository.cs" />
+    <Compile Include="Dal\IRepository.cs" />
+    <Compile Include="Dal\PhotoRepository.cs" />
+    <Compile Include="Dal\Repository.cs" />
+    <Compile Include="Dal\UserRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\congaratulationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>congaratulationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\congaratulationModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -216,6 +228,12 @@
       <DependentUpon>congaratulationModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Models\congaratulationModel.edmx.sql" />
+    <Content Include="Models\congaratulationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>congaratulationModel.cs</LastGenOutput>
+      <DependentUpon>congaratulationModel.edmx</DependentUpon>
+    </Content>
     <Content Include="Models\CongratulationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CongratulationModel.Context.cs</LastGenOutput>

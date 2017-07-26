@@ -4,11 +4,150 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="congaratulationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
-        <EntityContainer Name="congaratulationModelTargetContainer" >
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="congaratulationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="congaratulationModelStoreContainer">
+    <EntitySet Name="uc_UserSet" EntityType="congaratulationModel.Store.uc_UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="uc_CongratulationCardSet" EntityType="congaratulationModel.Store.uc_CongratulationCardSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="uc_CongratulationSet" EntityType="congaratulationModel.Store.uc_CongratulationSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="uc_GiftSet" EntityType="congaratulationModel.Store.uc_GiftSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="uc_PhotoSet" EntityType="congaratulationModel.Store.uc_PhotoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="uc_CongratulationCarduc_Gift" EntityType="congaratulationModel.Store.uc_CongratulationCarduc_Gift" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="uc_Useruc_CongratulationCard" Association="congaratulationModel.Store.uc_Useruc_CongratulationCard">
+      <End Role="uc_User" EntitySet="uc_UserSet" />
+      <End Role="uc_CongratulationCard" EntitySet="uc_CongratulationCardSet" />
+    </AssociationSet>
+    <AssociationSet Name="uc_CongratulationCarduc_Congratulation" Association="congaratulationModel.Store.uc_CongratulationCarduc_Congratulation">
+      <End Role="uc_CongratulationCard" EntitySet="uc_CongratulationCardSet" />
+      <End Role="uc_Congratulation" EntitySet="uc_CongratulationSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uc_CongratulationCarduc_Gift_uc_CongratulationCard" Association="congaratulationModel.Store.FK_uc_CongratulationCarduc_Gift_uc_CongratulationCard">
+      <End Role="uc_CongratulationCard" EntitySet="uc_CongratulationCardSet" />
+      <End Role="uc_CongratulationCarduc_Gift" EntitySet="uc_CongratulationCarduc_Gift" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uc_CongratulationCarduc_Gift_uc_Gift" Association="congaratulationModel.Store.FK_uc_CongratulationCarduc_Gift_uc_Gift">
+      <End Role="uc_Gift" EntitySet="uc_GiftSet" />
+      <End Role="uc_CongratulationCarduc_Gift" EntitySet="uc_CongratulationCarduc_Gift" />
+    </AssociationSet>
+    <AssociationSet Name="uc_CongratulationCarduc_Photo" Association="congaratulationModel.Store.uc_CongratulationCarduc_Photo">
+      <End Role="uc_CongratulationCard" EntitySet="uc_CongratulationCardSet" />
+      <End Role="uc_Photo" EntitySet="uc_PhotoSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="uc_UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Alias" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BirthdayDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uc_CongratulationCardSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HeaderText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HeaderBackgroundImage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Whom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HeaderImageUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="uc_User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uc_CongratulationSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CongratulationImageUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Who" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="uc_CongratulationCard_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uc_GiftSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GiftImage" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uc_PhotoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhotoUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="uc_CongratulationCard_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uc_CongratulationCarduc_Gift">
+    <Key>
+      <PropertyRef Name="uc_CongratulationCard_Id" />
+      <PropertyRef Name="uc_Gift_Id" />
+    </Key>
+    <Property Name="uc_CongratulationCard_Id" Type="int" Nullable="false" />
+    <Property Name="uc_Gift_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="uc_Useruc_CongratulationCard">
+    <End Role="uc_User" Type="congaratulationModel.Store.uc_UserSet" Multiplicity="1" />
+    <End Role="uc_CongratulationCard" Type="congaratulationModel.Store.uc_CongratulationCardSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uc_User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="uc_CongratulationCard">
+        <PropertyRef Name="uc_User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="uc_CongratulationCarduc_Congratulation">
+    <End Role="uc_CongratulationCard" Type="congaratulationModel.Store.uc_CongratulationCardSet" Multiplicity="1" />
+    <End Role="uc_Congratulation" Type="congaratulationModel.Store.uc_CongratulationSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uc_CongratulationCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="uc_Congratulation">
+        <PropertyRef Name="uc_CongratulationCard_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="uc_CongratulationCarduc_Photo">
+    <End Role="uc_CongratulationCard" Type="congaratulationModel.Store.uc_CongratulationCardSet" Multiplicity="1" />
+    <End Role="uc_Photo" Type="congaratulationModel.Store.uc_PhotoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uc_CongratulationCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="uc_Photo">
+        <PropertyRef Name="uc_CongratulationCard_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_uc_CongratulationCarduc_Gift_uc_CongratulationCard">
+    <End Role="uc_CongratulationCard" Type="congaratulationModel.Store.uc_CongratulationCardSet" Multiplicity="1" />
+    <End Role="uc_CongratulationCarduc_Gift" Type="congaratulationModel.Store.uc_CongratulationCarduc_Gift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uc_CongratulationCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="uc_CongratulationCarduc_Gift">
+        <PropertyRef Name="uc_CongratulationCard_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_uc_CongratulationCarduc_Gift_uc_Gift">
+    <End Role="uc_CongratulationCarduc_Gift" Type="congaratulationModel.Store.uc_CongratulationCarduc_Gift" Multiplicity="*" />
+    <End Role="uc_Gift" Type="congaratulationModel.Store.uc_GiftSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="uc_Gift">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="uc_CongratulationCarduc_Gift">
+        <PropertyRef Name="uc_Gift_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="congaratulationModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -106,13 +245,90 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-        <Alias Key="Model" Value="congaratulationModel" />
-        <Alias Key="Target" Value="congaratulationModel.Store" />
-        <EntityContainerMapping CdmEntityContainer="congaratulationModelContainer" StorageEntityContainer="congaratulationModelTargetContainer">
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="congaratulationModelStoreContainer" CdmEntityContainer="congaratulationModelContainer">
+    <EntitySetMapping Name="uc_UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_User)">
+        <MappingFragment StoreEntitySet="uc_UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="BirthdayDate" ColumnName="BirthdayDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uc_CongratulationCardSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_CongratulationCard)">
+        <MappingFragment StoreEntitySet="uc_CongratulationCardSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HeaderText" ColumnName="HeaderText" />
+          <ScalarProperty Name="HeaderBackgroundImage" ColumnName="HeaderBackgroundImage" />
+          <ScalarProperty Name="Whom" ColumnName="Whom" />
+          <ScalarProperty Name="HeaderImageUrl" ColumnName="HeaderImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uc_CongratulationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_Congratulation)">
+        <MappingFragment StoreEntitySet="uc_CongratulationSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CongratulationImageUrl" ColumnName="CongratulationImageUrl" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Who" ColumnName="Who" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uc_GiftSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_Gift)">
+        <MappingFragment StoreEntitySet="uc_GiftSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GiftImage" ColumnName="GiftImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uc_PhotoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_Photo)">
+        <MappingFragment StoreEntitySet="uc_PhotoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="uc_Useruc_CongratulationCard" TypeName="congaratulationModel.uc_Useruc_CongratulationCard" StoreEntitySet="uc_CongratulationCardSet">
+      <EndProperty Name="uc_User">
+        <ScalarProperty Name="Id" ColumnName="uc_User_Id" />
+      </EndProperty>
+      <EndProperty Name="uc_CongratulationCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="uc_CongratulationCarduc_Congratulation" TypeName="congaratulationModel.uc_CongratulationCarduc_Congratulation" StoreEntitySet="uc_CongratulationSet">
+      <EndProperty Name="uc_CongratulationCard">
+        <ScalarProperty Name="Id" ColumnName="uc_CongratulationCard_Id" />
+      </EndProperty>
+      <EndProperty Name="uc_Congratulation">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="uc_CongratulationCarduc_Gift" TypeName="congaratulationModel.uc_CongratulationCarduc_Gift" StoreEntitySet="uc_CongratulationCarduc_Gift">
+      <EndProperty Name="uc_CongratulationCard">
+        <ScalarProperty Name="Id" ColumnName="uc_CongratulationCard_Id" />
+      </EndProperty>
+      <EndProperty Name="uc_Gift">
+        <ScalarProperty Name="Id" ColumnName="uc_Gift_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="uc_CongratulationCarduc_Photo" TypeName="congaratulationModel.uc_CongratulationCarduc_Photo" StoreEntitySet="uc_PhotoSet">
+      <EndProperty Name="uc_CongratulationCard">
+        <ScalarProperty Name="Id" ColumnName="uc_CongratulationCard_Id" />
+      </EndProperty>
+      <EndProperty Name="uc_Photo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -126,6 +342,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

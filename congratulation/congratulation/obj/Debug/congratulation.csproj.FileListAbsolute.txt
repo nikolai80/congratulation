@@ -51,6 +51,8 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\congrat
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\congratulation.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\congratulation.pdb
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Antlr3.Runtime.dll
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\EntityFramework.dll
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\EntityFramework.SqlServer.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Microsoft.AI.Agent.Intercept.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Microsoft.AI.DependencyCollector.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -72,6 +74,8 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\System.
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\System.Web.WebPages.Razor.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\WebGrease.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Antlr3.Runtime.pdb
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\EntityFramework.xml
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\EntityFramework.SqlServer.xml
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Microsoft.AI.DependencyCollector.xml
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Microsoft.AI.Web.xml
@@ -88,6 +92,7 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\System.
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\System.Web.WebPages.xml
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\System.Web.WebPages.Deployment.xml
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\System.Web.WebPages.Razor.xml
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\EntityFramework.resources.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\System.Web.Helpers.resources.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\System.Web.Mvc.resources.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\System.Web.Optimization.resources.dll
@@ -95,6 +100,5 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\Syst
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\System.Web.WebPages.resources.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\System.Web.WebPages.Deployment.resources.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\System.Web.WebPages.Razor.resources.dll
-D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.csprojResolveAssemblyReference.cache
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.pdb
