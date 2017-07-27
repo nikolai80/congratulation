@@ -151,6 +151,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\UserSummary.cs" />
     <Compile Include="Controllers\CongratulationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Dal\CongratulationCardRepository.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Dal\IRepository.cs" />
     <Compile Include="Dal\PhotoRepository.cs" />
     <Compile Include="Dal\Repository.cs" />
+    <Compile Include="Dal\UnitOfWork.cs" />
     <Compile Include="Dal\UserRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
