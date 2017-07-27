@@ -102,3 +102,4 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\Syst
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\System.Web.WebPages.Razor.resources.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.pdb
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.csprojResolveAssemblyReference.cache

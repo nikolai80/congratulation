@@ -1,39 +1,57 @@
 ﻿using congratulation.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace congratulation.Dal
 {
-  public class UserRepository :Repository, IRepository<uc_User>
+  public class UserRepository : Repository, IRepository<uc_User>
   {
-    public UserRepository(congaratulationModelContainer context):base(context)
+    public UserRepository(congaratulationModelContainer context) : base(context)
     {
     }
     public void Create(uc_User item)
     {
-      throw new NotImplementedException();
+      db.uc_UserSet.Add(item);
     }
 
     public void Delete(int id)
     {
-      throw new NotImplementedException();
+     var user= db.uc_UserSet.Find(id);
+      if (user!=null)
+      {
+        db.uc_UserSet.Remove(user);
+      }
     }
 
     public uc_User Get(int id)
     {
-      throw new NotImplementedException();
+      uc_User res = new uc_User();
+
+      try
+      {
+        db.uc_UserSet.Find(id);
+      }
+      catch (Exception ex)
+      {
+        throw;
+      }
+
+      return res;
     }
 
     public IEnumerable<uc_User> GetAll()
     {
-      throw new NotImplementedException();
+
+      var res = db.uc_UserSet;
+      return res;
     }
 
     public void Update(uc_User item)
     {
-      throw new NotImplementedException();
+      db.Entry(item).State = EntityState.Modified;
     }
   }
 }
