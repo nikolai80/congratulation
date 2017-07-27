@@ -103,3 +103,6 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\Syst
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.pdb
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.csprojResolveAssemblyReference.cache
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\AutoMapper.dll
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\AutoMapper.xml
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\EntityFramework.SqlServer.resources.dll
