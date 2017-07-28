@@ -12,9 +12,9 @@ namespace congratulation.BLL.DTO
   {
     UnitOfWork Db { get; set; }
 
-    public UserService(UnitOfWork database)
+    public UserService()
     {
-      Db = database;
+      Db = new UnitOfWork();
     }
     public void Dispose()
     {

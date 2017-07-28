@@ -106,3 +106,5 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\c
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\AutoMapper.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\AutoMapper.xml
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\ru\EntityFramework.SqlServer.resources.dll
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Ninject.dll
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Ninject.xml
