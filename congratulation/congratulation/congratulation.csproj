@@ -154,6 +154,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BLL\DTO\IUserService.cs" />
+    <Compile Include="BLL\DTO\UserDto.cs" />
+    <Compile Include="BLL\DTO\UserService.cs" />
     <Compile Include="BLL\UserSummary.cs" />
     <Compile Include="Controllers\CongratulationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -283,6 +286,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
