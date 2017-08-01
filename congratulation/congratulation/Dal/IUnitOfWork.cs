@@ -10,9 +10,9 @@ namespace congratulation.Dal
   interface IUnitOfWork
   {
     IRepository<uc_User> UserRepository { get; }
-    IRepository<uc_CongratulationCard> CongratulationCardRepository { get; }
+    IRepository<uc_Photo> CongratulationCardRepository { get; }
     IRepository<uc_Congratulation> CongratulationRepository { get; }
-    IRepository<uc_Gift> GiftRepository { get; }
+    IRepository<uc_Photo> GiftRepository { get; }
     IRepository<uc_Photo> PhotoRepository { get; }
     void Save();
   }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/26/2017 10:01:35
+-- Date Created: 08/01/2017 17:51:55
 -- Generated from EDMX file: D:\rybchenko\myProjects\congratulation\congratulation\congratulation\Models\congaratulationModel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,44 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_uc_Useruc_CongratulationCard]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[uc_CongratulationCardSet] DROP CONSTRAINT [FK_uc_Useruc_CongratulationCard];
+GO
+IF OBJECT_ID(N'[dbo].[FK_uc_CongratulationCarduc_Congratulation]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[uc_CongratulationSet] DROP CONSTRAINT [FK_uc_CongratulationCarduc_Congratulation];
+GO
+IF OBJECT_ID(N'[dbo].[FK_uc_CongratulationCarduc_Gift_uc_CongratulationCard]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[uc_CongratulationCarduc_Gift] DROP CONSTRAINT [FK_uc_CongratulationCarduc_Gift_uc_CongratulationCard];
+GO
+IF OBJECT_ID(N'[dbo].[FK_uc_CongratulationCarduc_Gift_uc_Gift]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[uc_CongratulationCarduc_Gift] DROP CONSTRAINT [FK_uc_CongratulationCarduc_Gift_uc_Gift];
+GO
+IF OBJECT_ID(N'[dbo].[FK_uc_CongratulationCarduc_Photo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[uc_PhotoSet] DROP CONSTRAINT [FK_uc_CongratulationCarduc_Photo];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[uc_UserSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[uc_UserSet];
+GO
+IF OBJECT_ID(N'[dbo].[uc_CongratulationCardSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[uc_CongratulationCardSet];
+GO
+IF OBJECT_ID(N'[dbo].[uc_CongratulationSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[uc_CongratulationSet];
+GO
+IF OBJECT_ID(N'[dbo].[uc_GiftSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[uc_GiftSet];
+GO
+IF OBJECT_ID(N'[dbo].[uc_PhotoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[uc_PhotoSet];
+GO
+IF OBJECT_ID(N'[dbo].[uc_CongratulationCarduc_Gift]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[uc_CongratulationCarduc_Gift];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
