@@ -7,22 +7,24 @@ using System.Web;
 
 namespace congratulation.Dal
 {
-  public class UserRepository : Repository, IRepository<uc_User>
+  public class UserRepository : IRepository<uc_User>
   {
-    public UserRepository(congaratulationModelContainer context) : base(context)
+    public congaratulationModelContainer _db;
+    public UserRepository(congaratulationModelContainer context)
     {
+      _db = context;
     }
     public void Create(uc_User item)
     {
-      db.uc_UserSet.Add(item);
+      _db.uc_UserSet.Add(item);
     }
 
     public void Delete(int id)
     {
-     var user= db.uc_UserSet.Find(id);
+     var user= _db.uc_UserSet.Find(id);
       if (user!=null)
       {
-        db.uc_UserSet.Remove(user);
+        _db.uc_UserSet.Remove(user);
       }
     }
 
@@ -32,7 +34,7 @@ namespace congratulation.Dal
 
       try
       {
-        db.uc_UserSet.Find(id);
+        _db.uc_UserSet.Find(id);
       }
       catch (Exception ex)
       {
@@ -45,13 +47,13 @@ namespace congratulation.Dal
     public IEnumerable<uc_User> GetAll()
     {
 
-      var res = db.uc_UserSet;
+      var res = _db.uc_UserSet;
       return res;
     }
 
     public void Update(uc_User item)
     {
-      db.Entry(item).State = EntityState.Modified;
+      _db.Entry(item).State = EntityState.Modified;
     }
   }
 }

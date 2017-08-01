@@ -169,7 +169,6 @@
     <Compile Include="Dal\IRepository.cs" />
     <Compile Include="Dal\IUnitOfWork.cs" />
     <Compile Include="Dal\PhotoRepository.cs" />
-    <Compile Include="Dal\Repository.cs" />
     <Compile Include="Dal\UnitOfWork.cs" />
     <Compile Include="Dal\UserRepository.cs" />
     <Compile Include="Global.asax.cs">

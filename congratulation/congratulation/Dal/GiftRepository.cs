@@ -6,10 +6,12 @@ using congratulation.Models;
 
 namespace congratulation.Dal
 {
-  public class GiftRepository : Repository, IRepository<uc_CongratulationCard>
+  public class GiftRepository : IRepository<uc_CongratulationCard>
   {
-    public GiftRepository(congaratulationModelContainer context) : base(context)
+    public congaratulationModelContainer _db;
+    public GiftRepository(congaratulationModelContainer context)
     {
+      _db = context;
     }
 
     public void Create(uc_CongratulationCard item)

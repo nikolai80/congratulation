@@ -6,10 +6,12 @@ using System.Web;
 
 namespace congratulation.Dal
 {
-  public class CongratulationCardRepository:Repository, IRepository<uc_CongratulationCard>
+  public class CongratulationCardRepository: IRepository<uc_CongratulationCard>
   {
-    public CongratulationCardRepository(congaratulationModelContainer context):base(context)
+    public congaratulationModelContainer _db;
+    public CongratulationCardRepository(congaratulationModelContainer context)
     {
+      _db = context;
     }
     public void Create(uc_CongratulationCard item)
     {
