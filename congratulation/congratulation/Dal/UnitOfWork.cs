@@ -6,7 +6,7 @@ using System.Web;
 
 namespace congratulation.Dal
 {
-  public class UnitOfWork : IDisposable
+  public class UnitOfWork : IDisposable, IUnitOfWork
   {
     private bool disposed = false;
     private congaratulationModelContainer db = new congaratulationModelContainer();

@@ -167,6 +167,7 @@
     <Compile Include="Dal\CongratulationRepository.cs" />
     <Compile Include="Dal\GiftRepository.cs" />
     <Compile Include="Dal\IRepository.cs" />
+    <Compile Include="Dal\IUnitOfWork.cs" />
     <Compile Include="Dal\PhotoRepository.cs" />
     <Compile Include="Dal\Repository.cs" />
     <Compile Include="Dal\UnitOfWork.cs" />
