@@ -1,4 +1,5 @@
-﻿using Ninject.Modules;
+﻿using congratulation.Dal;
+using Ninject.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace congratulation.Infrastructure
 
     public override void Load()
     {
-      throw new NotImplementedException();
+      Bind<IUnitOfWork>().To<UnitOfWork>().WithConstructorArgument(connectionString);
     }
   }
 }

@@ -10,7 +10,7 @@
         <AssociationConnector Association="congaratulationModel.uc_Useruc_CongratulationCard" />
         <EntityTypeShape EntityType="congaratulationModel.uc_Congratulation" Width="1.875" PointX="8" PointY="0.5" />
         <EntityTypeShape EntityType="congaratulationModel.uc_Gift" Width="1.5" PointX="8.25" PointY="3" />
-        <EntityTypeShape EntityType="congaratulationModel.uc_Photo" Width="1.5" PointX="8.25" PointY="5" />
+        <EntityTypeShape EntityType="congaratulationModel.uc_Photo" Width="2" PointX="8.625" PointY="5" />
         <AssociationConnector Association="congaratulationModel.uc_CongratulationCarduc_Congratulation" />
         <AssociationConnector Association="congaratulationModel.uc_CongratulationCarduc_Gift" />
         <AssociationConnector Association="congaratulationModel.uc_CongratulationCarduc_Photo" />
