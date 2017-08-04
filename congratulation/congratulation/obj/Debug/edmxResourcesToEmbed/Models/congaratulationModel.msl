@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="congaratulationModelStoreContainer" CdmEntityContainer="congaratulationModelContainer">
+    <EntitySetMapping Name="uc_UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_User)">
+        <MappingFragment StoreEntitySet="uc_UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Alias" ColumnName="Alias" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="BirthdayDate" ColumnName="BirthdayDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uc_CongratulationCardSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_CongratulationCard)">
+        <MappingFragment StoreEntitySet="uc_CongratulationCardSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HeaderText" ColumnName="HeaderText" />
+          <ScalarProperty Name="HeaderBackgroundImage" ColumnName="HeaderBackgroundImage" />
+          <ScalarProperty Name="Whom" ColumnName="Whom" />
+          <ScalarProperty Name="HeaderImageUrl" ColumnName="HeaderImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uc_CongratulationSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_Congratulation)">
+        <MappingFragment StoreEntitySet="uc_CongratulationSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CongratulationImageUrl" ColumnName="CongratulationImageUrl" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Who" ColumnName="Who" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uc_GiftSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_Gift)">
+        <MappingFragment StoreEntitySet="uc_GiftSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GiftImage" ColumnName="GiftImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uc_PhotoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(congaratulationModel.uc_Photo)">
+        <MappingFragment StoreEntitySet="uc_PhotoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="uc_Useruc_CongratulationCard" TypeName="congaratulationModel.uc_Useruc_CongratulationCard" StoreEntitySet="uc_CongratulationCardSet">
+      <EndProperty Name="uc_User">
+        <ScalarProperty Name="Id" ColumnName="uc_User_Id" />
+      </EndProperty>
+      <EndProperty Name="uc_CongratulationCard">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="uc_CongratulationCarduc_Congratulation" TypeName="congaratulationModel.uc_CongratulationCarduc_Congratulation" StoreEntitySet="uc_CongratulationSet">
+      <EndProperty Name="uc_CongratulationCard">
+        <ScalarProperty Name="Id" ColumnName="uc_CongratulationCard_Id" />
+      </EndProperty>
+      <EndProperty Name="uc_Congratulation">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="uc_CongratulationCarduc_Gift" TypeName="congaratulationModel.uc_CongratulationCarduc_Gift" StoreEntitySet="uc_CongratulationCarduc_Gift">
+      <EndProperty Name="uc_CongratulationCard">
+        <ScalarProperty Name="Id" ColumnName="uc_CongratulationCard_Id" />
+      </EndProperty>
+      <EndProperty Name="uc_Gift">
+        <ScalarProperty Name="Id" ColumnName="uc_Gift_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="uc_CongratulationCarduc_Photo" TypeName="congaratulationModel.uc_CongratulationCarduc_Photo" StoreEntitySet="uc_PhotoSet">
+      <EndProperty Name="uc_CongratulationCard">
+        <ScalarProperty Name="Id" ColumnName="uc_CongratulationCard_Id" />
+      </EndProperty>
+      <EndProperty Name="uc_Photo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

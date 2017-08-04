@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace congratulation.BLL.DTO
 {
-  interface IUserService
+  public interface IUserService
   {
 
     UserDto GetUser(int? id);
