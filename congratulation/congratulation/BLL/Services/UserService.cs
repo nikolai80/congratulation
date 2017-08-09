@@ -23,8 +23,10 @@ namespace congratulation.BLL
 
     public IEnumerable<UserDto> GetAllUsers()
     {
-      Mapper.Initialize(cfg => cfg.CreateMap<uc_User, UserDto>());
-      return Mapper.Map<IEnumerable<uc_User>, List<UserDto>>(Db.UserRepository.GetAll());
+      Mapper.Initialize(cfg => cfg.CreateMap<uc_User, UserDto>().ForMember(dest=>dest.uc_CongratulationCards, opc=>opc.MapFrom(src=>src.uc_CongratulationCard)));
+      Mapper.AssertConfigurationIsValid();
+      var users= Mapper.Map<IEnumerable<uc_User>, List<UserDto>>(Db.UserRepository.GetAll());
+      return users;
     }
 
     public UserDto GetUser(int? id)

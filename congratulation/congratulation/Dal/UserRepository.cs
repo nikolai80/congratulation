@@ -47,7 +47,7 @@ namespace congratulation.Dal
     public IEnumerable<uc_User> GetAll()
     {
 
-      var res = _db.uc_UserSet;
+      var res = _db.uc_UserSet.Include(cc=>cc.uc_CongratulationCard);
       return res;
     }
 
