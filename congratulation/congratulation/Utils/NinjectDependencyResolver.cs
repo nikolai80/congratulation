@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Ninject;
 using System.Web.Mvc;
-using congratulation.BLL.DTO;
+using congratulation.BLL;
 
 namespace congratulation.Utils
 {

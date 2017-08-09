@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace congratulation.BLL.DTO
+namespace congratulation.BLL
 {
   public class UserDto
   {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace congratulation.BLL.DTO
+namespace congratulation.BLL
 {
   public interface IUserService
   {

@@ -6,7 +6,7 @@ using congratulation.Dal;
 using AutoMapper;
 using congratulation.Models;
 
-namespace congratulation.BLL.DTO
+namespace congratulation.BLL
 {
   public class UserService : IUserService
   {
