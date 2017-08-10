@@ -10,8 +10,10 @@ namespace congratulation.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+  using Ninject.Modules;
+  using congratulation.Infrastructure;
 
-    public static class NinjectWebCommon 
+  public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
@@ -39,7 +41,8 @@ namespace congratulation.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
-            var kernel = new StandardKernel();
+      var modules = new INinjectModule[] { new ServiceModule("congaratulationModelContainer") };
+      var kernel = new StandardKernel(modules);
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
@@ -61,6 +64,7 @@ namespace congratulation.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        }        
+      System.Web.Mvc.DependencyResolver.SetResolver(new Utils.NinjectDependencyResolver(kernel));
+    }        
     }
 }
