@@ -1,4 +1,5 @@
-﻿using congratulation.Models;
+﻿using congratulation.BLL;
+using congratulation.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,6 @@ namespace congratulation.ViewModels
     public string Name { get; set; }
     public string Surname { get; set; }
     public System.DateTime BirthdayDate { get; set; }
-    public virtual ICollection<uc_Congratulation> uc_CongratulationCards { get; set; }
+    public virtual ICollection<CongratulationCardDto> CongratulationCards { get; set; }
   }
 }

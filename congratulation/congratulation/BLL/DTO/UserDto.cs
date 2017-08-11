@@ -14,6 +14,6 @@ namespace congratulation.BLL
     public string Name { get; set; }
     public string Surname { get; set; }
     public System.DateTime BirthdayDate { get; set; }
-    public virtual ICollection<uc_Congratulation> uc_CongratulationCards { get; set; }
+    public virtual ICollection<CongratulationCardDto> CongratulationCards { get; set; }
   }
 }

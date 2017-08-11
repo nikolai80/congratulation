@@ -19,7 +19,7 @@
         foreach (var item in Model)
         {
           <div>@(String.IsNullOrEmpty(item.Name) == true ? "none" : item.Name)</div>
-          <div>@item.uc_CongratulationCards.Count()</div>
+          <div>@item.CongratulationCards.Count()</div>
         }
       }
       else
