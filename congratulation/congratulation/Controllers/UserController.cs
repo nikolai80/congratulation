@@ -25,10 +25,22 @@ namespace congratulation.Controllers
       return View(users);
     }
 
-    public ActionResult UserPage(int id)
+    public ActionResult UserPage(int? id)
     {
-      UserViewModel user = new UserViewModel();
-      return View(user);
+      UserViewModel res;
+      if (id == null || id <= 0)
+      {
+        res = new UserViewModel();
+      }
+      else
+      {
+        var userDto = userService.GetUser(id);
+
+        Mapper.Initialize(cfg => cfg.CreateMap<UserDto, UserViewModel>());
+        res = Mapper.Map<UserDto, UserViewModel>(userDto);
+      }
+
+      return View(res);
     }
 
     protected override void Dispose(bool disposing)

@@ -16,7 +16,11 @@ namespace congratulation.Dal
     }
     public void Create(uc_User item)
     {
-      _db.uc_UserSet.Add(item);
+      try
+      {
+       _db.uc_UserSet.Add(item);
+      }
+      catch(Exception ex) { throw; }
     }
 
     public void Delete(int id)
@@ -34,7 +38,7 @@ namespace congratulation.Dal
 
       try
       {
-        _db.uc_UserSet.Find(id);
+       res= _db.uc_UserSet.Find(id);
       }
       catch (Exception ex)
       {
