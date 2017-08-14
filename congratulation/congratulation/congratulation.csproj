@@ -238,6 +238,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\NinjectDependencyResolver.cs" />
+    <Compile Include="ViewModels\CongratulationCardVm.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

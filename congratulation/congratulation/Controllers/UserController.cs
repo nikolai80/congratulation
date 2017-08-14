@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper.QueryableExtensions;
 
 namespace congratulation.Controllers
 {
@@ -36,7 +37,9 @@ namespace congratulation.Controllers
       {
         var userDto = userService.GetUser(id);
 
-        Mapper.Initialize(cfg => cfg.CreateMap<UserDto, UserViewModel>());
+        Mapper.Initialize(cfg => {
+          cfg.CreateMap<CongratulationCardDto, CongratulationCardVm>();
+          cfg.CreateMap<UserDto, UserViewModel>(); });
         res = Mapper.Map<UserDto, UserViewModel>(userDto);
       }
 

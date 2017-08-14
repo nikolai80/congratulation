@@ -1,58 +1,58 @@
-﻿@model congratulation.ViewModels.UserViewModel
+﻿@using congratulation.ViewModels
+@model congratulation.ViewModels.UserViewModel
 
 @{
-    Layout = null;
+  Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h4>Данные о @Html.DisplayFor(model => model.Alias)</h4>
+<hr />
+<dl class="dl-horizontal">
+  <dt>
+    @Html.DisplayNameFor(model => model.Alias)
+  </dt>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>UserPage</title>
-</head>
-<body>
-    <div>
-        <h4>Данные о @Html.DisplayFor(model => model.Alias)</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Alias)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Alias)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Surname)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Surname)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.BirthdayDate)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.BirthdayDate)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+  <dd>
+    @Html.DisplayFor(model => model.Alias)
+  </dd>
+
+  <dt>
+    @Html.DisplayNameFor(model => model.Name)
+  </dt>
+
+  <dd>
+    @Html.DisplayFor(model => model.Name)
+  </dd>
+
+  <dt>
+    @Html.DisplayNameFor(model => model.Surname)
+  </dt>
+
+  <dd>
+    @Html.DisplayFor(model => model.Surname)
+  </dd>
+
+  <dt>
+    @Html.DisplayNameFor(model => model.BirthdayDate)
+  </dt>
+
+  <dd>
+    @Html.DisplayFor(model => model.BirthdayDate)
+  </dd>
+
+</dl>
+
+@foreach (CongratulationCardVm card in Model.CongratulationCards)
+      {
+  <div class="cardTable row">
+    <div class="cardTable-no col-1">@card.Id</div>
+    <div class="cardTable-whom col-4">@card.Whom</div>
+    <div class="cardTable-whom col-4">@card.HeaderText</div>
+    <div class="cardTable-whom col-3">@Html.ActionLink("EditCard", "Congratulation", new { id = card.Id }) </div>
+  </div>
+}
+<p>
+  @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+  @Html.ActionLink("Back to List", "Index")
+</p>
+
