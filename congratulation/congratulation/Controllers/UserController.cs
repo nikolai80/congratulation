@@ -25,6 +25,12 @@ namespace congratulation.Controllers
       return View(users);
     }
 
+    public ActionResult UserPage(int id)
+    {
+      UserViewModel user = new UserViewModel();
+      return View(user);
+    }
+
     protected override void Dispose(bool disposing)
     {
       userService.Dispose();
