@@ -41,14 +41,18 @@
   </dd>
 
 </dl>
-
+<div class="row">
+  <div class="col-12">
+    @Html.ActionLink("AddCard", "AddCard", "Congratulation", new { id = Model.Id },null)
+  </div>
+</div>
 @foreach (CongratulationCardVm card in Model.CongratulationCards)
       {
   <div class="cardTable row">
     <div class="cardTable-no col-1">@card.Id</div>
     <div class="cardTable-whom col-4">@card.Whom</div>
     <div class="cardTable-whom col-4">@card.HeaderText</div>
-    <div class="cardTable-whom col-3">@Html.ActionLink("EditCard", "Congratulation", new { id = card.Id }) </div>
+    <div class="cardTable-whom col-3">@Html.ActionLink("EditCard", "EditCard", "Congratulation", new { id = card.Id },null) </div>
   </div>
 }
 <p>

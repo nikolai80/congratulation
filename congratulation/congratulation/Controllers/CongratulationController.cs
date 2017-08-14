@@ -13,5 +13,12 @@ namespace congratulation.Controllers
         {
             return View();
         }
+    public ActionResult EditCard(int id) {
+      return View();
     }
+    public ActionResult AddCard()
+    {
+      return View();
+    }
+  }
 }
