@@ -6,7 +6,7 @@ using congratulation.Models;
 
 namespace congratulation.Dal
 {
-  public class GiftRepository : IRepository<uc_Congratulation>
+  public class GiftRepository : IRepository<uc_Gift>
   {
     public congaratulationModelContainer _db;
     public GiftRepository(congaratulationModelContainer context)
@@ -14,7 +14,7 @@ namespace congratulation.Dal
       _db = context;
     }
 
-    public void Create(uc_Congratulation item)
+    public void Create(uc_Gift item)
     {
       throw new NotImplementedException();
     }
@@ -24,17 +24,17 @@ namespace congratulation.Dal
       throw new NotImplementedException();
     }
 
-    public uc_Congratulation Get(int id)
+    public uc_Gift Get(int id)
     {
       throw new NotImplementedException();
     }
 
-    public IEnumerable<uc_Congratulation> GetAll()
+    public IEnumerable<uc_Gift> GetAll()
     {
       throw new NotImplementedException();
     }
 
-    public void Update(uc_Congratulation item)
+    public void Update(uc_Gift item)
     {
       throw new NotImplementedException();
     }

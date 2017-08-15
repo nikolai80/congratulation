@@ -68,3 +68,4 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\AutoMap
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\DelegateDecompiler.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\DelegateDecompiler.EntityFramework.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Mono.Reflection.dll
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.csprojResolveAssemblyReference.cache

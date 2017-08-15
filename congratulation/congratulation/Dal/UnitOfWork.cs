@@ -24,7 +24,7 @@ namespace congratulation.Dal
         return userRepository;
       }
     }
-    public IRepository<uc_Congratulation> CongratulationCardRepository
+    public IRepository<uc_CongratulationCard> CongratulationCardRepository
     {
       get
       {
@@ -48,7 +48,7 @@ namespace congratulation.Dal
       }
     }
 
-    public IRepository<uc_Congratulation> GiftRepository
+    public IRepository<uc_Gift> GiftRepository
     {
       get
       {
@@ -60,7 +60,7 @@ namespace congratulation.Dal
       }
     }
 
-    public IRepository<uc_Congratulation> PhotoRepository
+    public IRepository<uc_Photo> PhotoRepository
     {
       get
       {

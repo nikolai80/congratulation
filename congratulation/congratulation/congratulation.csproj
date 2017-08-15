@@ -183,6 +183,8 @@
     <Compile Include="BLL\DTO\CongratulationDto.cs" />
     <Compile Include="BLL\DTO\GiftDto.cs" />
     <Compile Include="BLL\DTO\PhotoDto.cs" />
+    <Compile Include="BLL\Services\CongratulationCardService.cs" />
+    <Compile Include="BLL\Services\ICongratulationCardService.cs" />
     <Compile Include="BLL\Services\IUserService.cs" />
     <Compile Include="BLL\DTO\UserDto.cs" />
     <Compile Include="BLL\Services\UserService.cs" />

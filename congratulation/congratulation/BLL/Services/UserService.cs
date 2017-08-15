@@ -11,11 +11,11 @@ namespace congratulation.BLL
 {
   public class UserService : IUserService
   {
-    UnitOfWork db { get; set; }
+    IUnitOfWork db { get; set; }
 
-    public UserService()
+    public UserService(IUnitOfWork dataBase)
     {
-      db = new UnitOfWork();
+      db = dataBase;
     }
     public void Dispose()
     {

@@ -7,13 +7,13 @@ using congratulation.Models;
 
 namespace congratulation.Dal
 {
-  interface IUnitOfWork
+  public interface IUnitOfWork:IDisposable
   {
     IRepository<uc_User> UserRepository { get; }
-    IRepository<uc_Congratulation> CongratulationCardRepository { get; }
+    IRepository<uc_CongratulationCard> CongratulationCardRepository { get; }
     IRepository<uc_Congratulation> CongratulationRepository { get; }
-    IRepository<uc_Congratulation> GiftRepository { get; }
-    IRepository<uc_Congratulation> PhotoRepository { get; }
+    IRepository<uc_Gift> GiftRepository { get; }
+    IRepository<uc_Photo> PhotoRepository { get; }
     void Save();
   }
 }

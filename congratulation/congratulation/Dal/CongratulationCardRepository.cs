@@ -6,14 +6,14 @@ using System.Web;
 
 namespace congratulation.Dal
 {
-  public class CongratulationCardRepository: IRepository<uc_Congratulation>
+  public class CongratulationCardRepository: IRepository<uc_CongratulationCard>
   {
     public congaratulationModelContainer _db;
     public CongratulationCardRepository(congaratulationModelContainer context)
     {
       _db = context;
     }
-    public void Create(uc_Congratulation item)
+    public void Create(uc_CongratulationCard item)
     {
       throw new NotImplementedException();
     }
@@ -23,17 +23,17 @@ namespace congratulation.Dal
       throw new NotImplementedException();
     }
 
-    public uc_Congratulation Get(int id)
+    public uc_CongratulationCard Get(int id)
     {
       throw new NotImplementedException();
     }
 
-    public IEnumerable<uc_Congratulation> GetAll()
+    public IEnumerable<uc_CongratulationCard> GetAll()
     {
       throw new NotImplementedException();
     }
 
-    public void Update(uc_Congratulation item)
+    public void Update(uc_CongratulationCard item)
     {
       throw new NotImplementedException();
     }

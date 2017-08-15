@@ -5,6 +5,7 @@ using System.Web;
 using Ninject;
 using System.Web.Mvc;
 using congratulation.BLL;
+using congratulation.BLL.Services;
 
 namespace congratulation.Utils
 {
@@ -27,6 +28,7 @@ namespace congratulation.Utils
     private void AddBindings()
     {
       kernel.Bind<IUserService>().To<UserService>();
+      kernel.Bind<ICongratulationCardService>().To<CongratulationCardService>();
     }
   }
 }
