@@ -42,8 +42,21 @@
 
 </dl>
 <div class="row">
-  <div class="col-12">
-    @Html.ActionLink("AddCard", "AddCard", "Congratulation", new { id = Model.Id },null)
+  <div class="col-12 userPage_addCard">
+    <button class="btn-addCard">Создать новую открытку</button>
+    @*@Html.ActionLink("AddCard", "AddCard", "Congratulation", new { id = Model.Id },null)*@
+    <div class="row userPage_addCardForm">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-3">Укажите заголовок открытки</div>
+          <div class="col-9"><input type="text" placeholder="С днем Рождения, С юбилеем" value="" class="addCardForm_headerText" /></div>
+        </div>
+        <div class="row">
+          <div class="col-3">Кого поздравляем</div>
+          <div class="col-9"><input type="text" value="" placeholder="Сестрёнка, Дружище, Игорь Афанасьевич.." class="addCardForm_headerText" /></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 @foreach (CongratulationCardVm card in Model.CongratulationCards)
@@ -59,4 +72,10 @@
   @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
   @Html.ActionLink("Back to List", "Index")
 </p>
+@section css{
+  <link href="~/Content/congratulationCard/card.css" rel="stylesheet" />
+  }
+@section scripts{
+<script src="~/Scripts/congratulationCard/congratulationCard.js"></script>
+  }
 

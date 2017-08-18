@@ -12,11 +12,11 @@ namespace congratulation.Controllers
 {
   public class CongratulationController : Controller
   {
-    ICongratulationCardService ccService;
+    ICongratulationCardService congratulationCardService;
 
      CongratulationController(ICongratulationCardService service)
     {
-      ccService = service;
+      congratulationCardService = service;
     }
     // GET: Congratulation
     public ActionResult Index()
@@ -32,18 +32,19 @@ namespace congratulation.Controllers
     public JsonResult AddCard(string headerText, string whom)
     {
       bool res = false;
-      CongratulationCardVm cardVm = new CongratulationCardVm {
+      CongratulationCardVm congratulationCardVm = new CongratulationCardVm {
       HeaderText=headerText,
       Whom=whom};
 
       Mapper.Initialize(cfg => { cfg.CreateMap<CongratulationCardVm, CongratulationCardDto>(); });
-
+      var congratulationCardDto = Mapper.Map<CongratulationCardVm, CongratulationCardDto>(congratulationCardVm);
+      congratulationCardService.AddCard(congratulationCardDto);
       return Json(new {result=res });
     }
 
     protected override void Dispose(bool disposing)
     {
-      ccService.Dispose();
+      congratulationCardService.Dispose();
       base.Dispose(disposing);
     }
   }
