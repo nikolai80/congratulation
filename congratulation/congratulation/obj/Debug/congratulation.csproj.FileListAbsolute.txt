@@ -69,3 +69,4 @@ D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Delegat
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\DelegateDecompiler.EntityFramework.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\bin\Mono.Reflection.dll
 D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.csprojResolveAssemblyReference.cache
+D:\rybchenko\myProjects\congratulation\congratulation\congratulation\obj\Debug\congratulation.csproj.CoreCompileInputs.cache
