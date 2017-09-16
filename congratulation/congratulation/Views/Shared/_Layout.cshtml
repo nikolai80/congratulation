@@ -10,27 +10,31 @@
   @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <ul class="nav">
-            <li class="nav-item">@Html.ActionLink("Домашняя страница", "Index", "Home",null,new {@class="nav-link" })</li>
-            <li class="nav-item">@Html.ActionLink("Контакт", "Contact", "Home", null, new { @class = "nav-link" })</li>
-          </ul>
-        </div>
-        <div class="col-6">
-          <ul class="nav justify-content-end">
-            <li class="nav-item"><a class="nav-link" href="#">Войти</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Зарегистрироваться</a></li>
-          </ul>
+  <div class="container">
+    <header class="row main-header">
+      <div class="col-12">
+        <div class="row"><div class="col-2">
+  <img src="" alt="Logo" class="main-logo" />
+</div>
+<div class="col-8">
+  <h1 class="text-uppercase text-center">cоздай свою online открытку</h1>
+</div>
+<div class="col-2">
+  <a href="#" class="main-loginBtn">Вход</a>
+  <a href="#" class="main-registrationBtn">Регистрация</a>
+</div></div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <nav class="nav col-12 justify-content-end">
+            <a href="#" class="nav-link">Как пользоваться</a>
+            <a href="#" class="nav-link">Создать открытку</a>
+            <a href="#" class="nav-link">Контакты</a>
+          </nav>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="container body-content">
+    </header>
     @RenderBody()
-    <hr />
     <footer>
       @if (IsSectionDefined("Footer"))
       {
@@ -41,7 +45,6 @@
         <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>}
     </footer>
   </div>
-
   @Scripts.Render("~/bundles/jquery")
   @Scripts.Render("~/bundles/bootstrap")
   @RenderSection("scripts", required: false)
