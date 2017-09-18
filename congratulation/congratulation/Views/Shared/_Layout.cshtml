@@ -8,6 +8,9 @@
   @Styles.Render("~/Content/css")
   @RenderSection("css", required: false)
   @Scripts.Render("~/bundles/modernizr")
+  <!-- Owl Stylesheets -->
+  <link rel="stylesheet" href="/Scripts/OwlCarousel/assets/owl.carousel.css">
+  <link rel="stylesheet" href="/Scripts/OwlCarousel/assets/owl.theme.default.css">
 </head>
 <body>
   <div class="container">
@@ -47,6 +50,7 @@
   </div>
   @Scripts.Render("~/bundles/jquery")
   @Scripts.Render("~/bundles/bootstrap")
+  <script src="~/Scripts/OwlCarousel/owl.carousel.js"></script>
   @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -299,6 +299,15 @@
     <Content Include="Scripts\congratulationCard\congratulationCard.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\OwlCarousel\assets\ajax-loader.gif" />
+    <Content Include="Scripts\OwlCarousel\assets\owl.carousel.css" />
+    <Content Include="Scripts\OwlCarousel\assets\owl.carousel.min.css" />
+    <Content Include="Scripts\OwlCarousel\assets\owl.theme.default.css" />
+    <Content Include="Scripts\OwlCarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Scripts\OwlCarousel\assets\owl.theme.green.css" />
+    <Content Include="Scripts\OwlCarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Scripts\OwlCarousel\assets\owl.video.play.png" />
+    <Content Include="Scripts\OwlCarousel\owl.carousel.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -324,7 +333,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\OwlCarousel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
